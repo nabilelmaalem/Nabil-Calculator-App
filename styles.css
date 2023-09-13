@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=League Spartan');
+*li:after, *li:before{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    font-family:'League Spartan', sans-serif;
+    font-size: 16px;
+}
+:root{
+    background-image: url(background4k.jpg) ;  
+    object-fit: contain;
+    background-size: cover; 
+    /*filter: blur(5px);   Apply only to background*/
+    --toggle-keypad: #232C43;
+    --bg-screen: #182034;
+    /* Above is responsible for Backgrounds */
+    position: relative;
+    isolation: isolate;
+    /* Two lines above are done to help the opaque overlay fitment */
+
+    --key-background: #637097;
+    --key-shadow: #232C43;
+    --key-bgtoggle: #D03F2F;
+    --key-result: #93261A;
+    --key-bg2: #EAE3DC;
+    --key-shadow2: #B4A597;
+    /* Above is responible for Keys */
+
+    --text-col: #444B5A;
+    --text-col2: white;
+    /* Above is responsible for Text*/
+}
+
+:root::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    backdrop-filter: blur(3px);
+    /*background: #3B3B3B;
+    opacity: .35;*/
+}
+/* Above is soley responsible for the opaque/blur overlay for the background */
+
+
+body{
+    height: 100vh;  
+    background: var(--main-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+label, h6{
+    color: var(--text-col2);
+    left: 150px;
+    font-size: 12.8px; 
+    position: relative;
+}
+
+.calculator{
+    display: flex;
+    flex-direction: column;
+    width: 172px;
+    margin: auto;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    margin: 50px 0px 10px;
+    position: relative;
+}
+
+.header h1{
+    color: var(--key-bg2);
+    position: absolute;
+    left: -208px;
+    top: -80px;
+    font-size: 25.6px;
+}
+
+.header h6{
+    align-self: center;
+}
+
+.input{
+    background-color: var(--toggle-keypad);
+    position: relative;
+    border-radius: 480px;
+    left: 160px;
+    height: 24px;
+    width: 64px;
+}
+
+[id="style1"], [id="style2"], [id="style3"]{
+    appearance: none;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 48px;
+    top: 4px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+[id="style1"]{
+    left: 3.6px;
+}
+
+[id="style2"]{
+    left: 25.328px;
+}
+
+[id="style3"]{
+    left: 39.888px;
+}
+
+input:checked{
+    background-color: var(--key-result);
+}
+
+label{
+    top: -16px;
+}
+
+label[for="style1"]{
+    left: 3.2px;
+}
+
+label[for="style2"]{
+    left: 16px;
+}
+
+label[for="style1"]{
+    left: 17.6px;
+}
+
+.user-inputs{
+    background-color: var(--bg-screen);
+    width: 411px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 112px;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    color: white;
+    text-align: right;
+    margin-bottom: 16px;
+}
+
+.user-inputs > .previous-operand{
+    font-size: 40px;
+}
+
+.user-inputs > .current-operand{
+    font-size: 40px;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 102.4px); 
+    grid-template-rows: repeat(5, 92px); 
+    background-color: var(--toggle-keypad);
+    padding: 14.4px 10px; 
+    border-radius: 16px; 
+}
+  
+.container > button {
+    padding: 12.8px 0; 
+    margin: 0 6.4px; 
+    background-color: var(--key-bg2);
+    box-shadow: 0 4.8px var(--key-shadow2);
+    border-radius: 8px; 
+    border: none;
+    cursor: pointer;
+    font-size: 32px; 
+    font-weight: 800;
+}
+  
+.btn {
+    grid-column: span 2;
+}
+  
+  button:nth-child(17),
+  button:nth-child(4) {
+    background-color: var(--key-background);
+    color: var(--key-bg2);
+    box-shadow: 0 4.8px var(--key-shadow); 
+    font-size: 16px; 
+    padding: 20.8px 0; 
+  }
+  
+  button:nth-child(18) {
+    background-color: var(--key-bgtoggle);
+    color: var(--key-bg2);
+    box-shadow: 0 4.8px var(--key-result); 
+    font-size: 16px; 
+    padding: 20.8px 0; 
+  }
+
